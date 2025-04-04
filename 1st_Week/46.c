@@ -51,7 +51,8 @@ int **Permute(int *nums, int numsSize, int *returnSize, int **returnColumnSizes)
     *returnColumnSizes = (int *)malloc(finalLen * sizeof(int)); // 申请排列长度数组空间
 
     for (int i = 0; i < g_resSize; i++) {
-        (*returnColumnSizes)[i] = numsSize; // 排列长度为数组长度
+        // 排列长度为数组长度
+        (*returnColumnSizes)[i] = numsSize;
     }
 
     free(tem);  
