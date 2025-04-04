@@ -24,7 +24,7 @@ void BackTracking(int *nums, int numsSize, int *tem, int temSize, bool *used)
         }
         used[i] = true; // 标记元素已使用
         tem[temSize] = nums[i]; // 将元素放入临时数组
-        BackTracking(nums, numsSize, tem, temSize + 1, used);//递归调用
+        BackTracking(nums, numsSize, tem, temSize + 1, used); // 递归调用
 
         used[i] = false;  // 回溯
     }
@@ -42,16 +42,16 @@ int **Permute(int *nums, int numsSize, int *returnSize, int **returnColumnSizes)
     
     g_res = (int **)malloc(finalLen * sizeof(int *)); // 申请排列数组空间
     
-    int *tem = (int *)malloc(numsSize * sizeof(int));//申请临时数组空间
-    bool *used = (bool *)malloc(numsSize * sizeof(bool));//申请使用标记数组空间
+    int *tem = (int *)malloc(numsSize * sizeof(int)); // 申请临时数组空间
+    bool *used = (bool *)malloc(numsSize * sizeof(bool)); // 申请使用标记数组空间
     memset(used, 0, numsSize * sizeof(bool)); // 初始化使用标记数组为 false
 
-    BackTracking(nums, numsSize, tem, 0, used);//调用回溯函数
+    BackTracking(nums, numsSize, tem, 0, used); // 调用回溯函数
 
-    *returnColumnSizes = (int *)malloc(finalLen * sizeof(int));//申请排列长度数组空间
+    *returnColumnSizes = (int *)malloc(finalLen * sizeof(int)); // 申请排列长度数组空间
 
     for (int i = 0; i < g_resSize; i++) {
-        (*returnColumnSizes)[i] = numsSize;//排列长度为数组长度
+        (*returnColumnSizes)[i] = numsSize; // 排列长度为数组长度
     }
 
     free(tem);  
