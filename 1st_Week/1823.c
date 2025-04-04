@@ -1,5 +1,5 @@
 /* 总体思想：利用环形队列，将数组元素循环右移k-1位，然后将最后一个元素放到第一个位置，然后再将数组元素循环右移k-1位，直到数组长度为1。最后返回第一个元素。 */
-int FindTheWinner (int n, int k) 
+int FindTheWinner(int n, int k) 
 {
     int *arr = (int *)malloc(n * sizeof(int)); // 申请数组空间
     if (arr == NULL) {
