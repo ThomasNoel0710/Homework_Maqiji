@@ -1,3 +1,5 @@
 # Homework_Maqiji
 
-我的作业
+For personal use.
+
+This is my homework record, including some problem solutions from leetcode.
