@@ -8,7 +8,7 @@ typedef struct BrowserHistory {
 
 // 创建 BrowserHistory 实例
 BrowserHistory* browserHistoryCreate (char* homepage) {
-    BrowserHistory *obj = (BrowserHistory *) malloc(sizeof(BrowserHistory));
+    BrowserHistory *obj = (BrowserHistory *)malloc(sizeof(BrowserHistory));
     obj -> index = 0;
     obj -> historySize = 1;  // 初始化时主页已经是一个记录
     obj -> history[0] = homepage;  // 将主页作为历史记录存储
