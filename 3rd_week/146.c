@@ -14,7 +14,7 @@ typedef struct {
 
 LRUCache* lRUCacheCreate(int capacity) {
     // 初始化obj对象
-    LRUCache* obj = (LRUCache*) malloc (sizeof(LRUCache));
+    LRUCache* obj = (LRUCache*)malloc(sizeof(LRUCache));
     obj -> capacity = capacity;
     obj -> size = 0;
     for(int i = 0; i < capacity; i++) {
@@ -41,7 +41,7 @@ int lRUCacheGet(LRUCache* obj, int key) {
 void lRUCachePut(LRUCache* obj, int key, int value) {
     if (obj -> size < obj -> capacity) {
         // 当容量未满时，直接添加
-        obj -> map[key] = (Node*) malloc (sizeof(Node));
+        obj -> map[key] = (Node*)malloc(sizeof(Node));
         obj -> map[key] -> key = key;
         obj -> map[key] -> value = value;
         obj -> arr[obj -> size++] = key;
@@ -56,7 +56,7 @@ void lRUCachePut(LRUCache* obj, int key, int value) {
         }
         obj -> arr[obj -> size - 1] = key; // 让当前key排在最后面
 
-        obj -> map[key] = (Node*) malloc (sizeof(Node));
+        obj -> map[key] = (Node*)malloc(sizeof(Node));
         obj -> map[key] -> key = key;
         obj -> map[key] -> value = value;
     }
