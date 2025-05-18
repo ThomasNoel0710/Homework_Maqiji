@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "stdbool.h": "c",
+        "type_traits": "c",
+        "logger.h": "c",
+        "cstdarg": "c",
+        "stdio.h": "c"
+    }
+}

@@ -3,8 +3,8 @@
 #include <stdbool.h>
 
 typedef struct {
-    int size;
-    int curSize;
+    int size;       // 最大容量
+    int curSize;    // 当前元素个数
     int front;      // 指向队头元素的位置
     int rear;       // 指向下一个要插入的位置（队尾之后）
     int* arr;
