@@ -14,10 +14,10 @@ typedef struct {
 
 LRUCache* lRUCacheCreate(int capacity) {
     // 初始化obj对象
-    LRUCache* obj = (LRUCache*)malloc(sizeof(LRUCache));
+    LRUCache* obj = (LRUCache*) malloc (sizeof(LRUCache));
     obj -> capacity = capacity;
     obj -> size = 0;
-    for(int i = 0; i < capacity; i++) {
+    for (int i = 0; i < capacity; i++) {
         obj -> map[i] = NULL;
         obj -> arr[i] = -1;
     }
@@ -25,10 +25,10 @@ LRUCache* lRUCacheCreate(int capacity) {
 }
 
 int lRUCacheGet(LRUCache* obj, int key) {
-    for(int i = 0; i < obj -> size; i++) {
-        if(obj -> arr[i] == key) {
+    for (int i = 0; i < obj -> size; i++) {
+        if (obj -> arr[i] == key) {
             // 当找到key时，调整顺序，以让当前key排在最后面
-            for(int i = 0; i < obj -> size - 1; i++) {
+            for (int i = 0; i < obj -> size - 1; i++) {
                 obj -> arr[i] = obj -> arr[i + 1]; 
             }
             obj -> arr[obj -> size - 1] = key;
